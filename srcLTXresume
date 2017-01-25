@@ -1,0 +1,113 @@
+\documentclass[a4paper,10pt]{article}
+
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo} 				%better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%%% modified for Karol Kozioł for ShareLaTeX use
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%%
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+%Tweak a bit the top margin
+%\addtolength{\voffset}{-1.3cm}
+
+%Italian hyphenation for the word: ''corporations''
+\hyphenation{im-pre-se}
+
+%-------------WATERMARK TEST [**not part of a CV**]---------------
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+%WATERMARK TEST [**not part of a CV**]---------------
+%\font\wm=''Baskerville:color=787878'' at 8pt
+%\font\wmweb=''Baskerville:color=FF1493'' at 8pt
+%{\wm 
+%	\begin{textblock}{1}(0,0)
+%		\rotatebox{-90}{\parbox{500mm}{
+%			Typeset by Alessandro Plasmati with \XeTeX\  \today\ for 
+%			{\wmweb \href{http://www.aleplasmati.comuv.com}{aleplasmati.comuv.com}}
+%		}
+%	}
+%	\end{textblock}
+%}
+
+\pagestyle{empty} % non-numbered pages
+
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%--------------------TITLE-------------
+\par{
+		{\Huge Aaron Parker
+	}\bigskip\par}
+
+%--------------------SECTIONS-----------------------------------
+%Section: Personal Data
+\section{Contact}
+
+\begin{tabular}{rl}
+    \textsc{Address:}   & 185 Gun Club Rd \\
+                        & Stony Point, NC 28678\\
+    \textsc{Phone:}     & 704 880-3407\\
+    \textsc{email:}     & \href{mailto:aparker9430@gmail.com}{aparker9430@gmail.com}
+\end{tabular}
+
+%Section: Education
+\section{Education}	
+ \textbf{Appalachian State University, NC}\\
+\begin{tabular}{r|p{11cm}}
+ \emph{Current} & Seeking Master of Science in \textsc{Computer Science}\\
+ & \footnotesize{Estimated Graduation December 2018}\\
+ \multicolumn{2}{c}{}\\
+\emph{Graduate 2009} & Bachelor of Science Degree in \textsc{Building Science}\\
+ & \footnotesize{Concentration in \mbox{Architecture}}\\
+\end{tabular}
+
+%Section: Work Experience
+\section{Work Experience}
+\begin{tabular}{r|p{11cm}}
+ \emph{Summer 2006~} & West Iredell Hardware \\
+ \textsc & \emph{Store Assistant}\\
+  &\footnotesize{Customer service and cashier}\\
+  \multicolumn{2}{c}{}\\
+ \emph{May 2007} & Food Lion LLC \\
+ \emph{July 2015} & \emph{Direct Store Deliveries}\\
+  & \footnotesize{Inventory management, insurance of product quality, pricing and information accuracy, food safety, and oversight of third party vendors.}\\
+\end{tabular}
+
+\section{Computer Science}
+~~Proficient in Java, C/C++, and Python with familiarity with PHP, mySQL, HTML, and Javascript.  Knowledgeable in software development programs including Eclipse, Git, Pycharm, Netbeans, and Visual Studio.\\
+
+\section{Building Science}
+~~Proficient with many computer programs for drafting, rendering, modeling, and design such as AutoCad and Revit Architecture.  Experienced with constructing physical models for building design in abstraction, massing, and detail.  Knowledgeable in sustainable strategies, designs, building methods, construction trade skills, and familiarity with sustainable building programs such as LEED and Healthy Built Homes.\\
+\end{document}
